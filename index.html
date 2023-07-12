@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,500,900&amp;subset=japanese"
+      rel="stylesheet"
+    />
+    <title>Oシステムズ</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-title"><img src="img/icon.png" /></div>
+      <div class="hamburger-menu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="2.25em"
+          viewBox="0 0 448 512"
+        >
+          <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+          <path
+            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+          />
+        </svg>
+      </div>
+      <nav class="menu-nav">
+        <ul class="menu-item">
+          <li class="menu"><a href="">トップページ</a></li>
+          <li class="menu"><a href="">会社概要</a></li>
+          <li class="menu"><a href="">事業内容</a></li>
+          <li class="menu"><a href="">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="home">
+        <div class="home-img">
+          <img src="img/main1.jpg" alt="" />
+          <div class="overlay">
+            <div class="slide-in-text">
+              <p>成長できる環境が</p>
+            </div>
+            <div class="slide-in-text-firsthalf second">
+              <p>ここにある</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="gallary">
+        <div class="gallary-title"><h2>Oシステムの特徴</h2></div>
+        <div class="container">
+          <div class="container-item">
+            <div class="container-item-img">
+              <img src="img/img1.jpg" alt="" />
+            </div>
+            <div class="container-item-text">
+              <div class="title">
+                <h4>風通しの良い環境</h4>
+              </div>
+              <div class="description">
+                <p>
+                  上司や先輩に意見が言いやすく、<br />質問しやすい環境になっています。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container-item">
+            <div class="container-item-img">
+              <img src="img/img2.jpg" alt="" />
+            </div>
+            <div class="container-item-text">
+              <div class="title">
+                <h4>未経験からでも安心</h4>
+              </div>
+              <div class="description">
+                <p>
+                  未経験から入社した先輩も活躍しています。<br />経験の有無に関わらず、チャレンジする精神が大切です。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container-item">
+            <div class="container-item-img">
+              <img src="img/img3.jpg" alt="" />
+            </div>
+            <div class="container-item-text">
+              <div class="title">
+                <h4>働きやすい環境</h4>
+              </div>
+              <div class="description">
+                <p>
+                  製作段階でデザイナーと相談し、<br />誰もが働きやすいオフィスを目指してオフィスを作成しました。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="company-section">
+        <div class="company-text">
+          <h2>会社紹介</h2>
+          <p>
+            私たちの会社は2010年に設立され、<br />それ以来、業界のリーダーとして地位を確立してきました。我々の成功の秘訣は、最高品質の製品とサービスを提供すること、そして顧客を第一に考えるという当社の経営方針です。
+          </p>
+        </div>
+        <div class="company-graph">
+          <h2>取引先の推移</h2>
+          <canvas id="barChart"></canvas>
+        </div>
+      </section>
+      <section class="inquiry-form">
+        <div class="container">
+          <div class="contact-text">
+            <h2>システム会社にお問い合わせ</h2>
+            <p>
+              こちらのフォームに名前とメールアドレスを入力してください。私たちのチームがあなたに連絡します。
+            </p>
+          </div>
+
+          <form class="form">
+            <div class="form-field">
+              <label for="name">名前</label>
+              <input type="text" id="name" name="name" />
+            </div>
+            <div class="form-field">
+              <label for="email">メールアドレス</label>
+              <input type="email" id="email" name="email" />
+            </div>
+            <input type="submit" value="送信" />
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p class="copyright">@2023 SAMPLE</p>
+      <div class="footer-content">
+        <p>プライバシーポリシー</p>
+        <p>サイトマップ</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyADituEathp2umMkkOheEsvCAeufC7fcZU",
+        authDomain: "osystems-80af3.firebaseapp.com",
+        projectId: "osystems-80af3",
+        storageBucket: "osystems-80af3.appspot.com",
+        messagingSenderId: "258079403338",
+        appId: "1:258079403338:web:f18bcef66c41eb240465b3",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
+  </body>
+</html>

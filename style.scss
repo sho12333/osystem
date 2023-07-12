@@ -1,0 +1,506 @@
+@import "_mixin";
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+body {
+  background: #ffffff;
+}
+
+// ヘッダ
+.site-header.scroll {
+  background: white;
+}
+
+.site-header {
+  // background: #fff;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  padding: 20px 20px;
+  position: fixed;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 3;
+
+  @include maxq(lg) {
+    padding: 10px 20px;
+  }
+
+  .site-title img {
+    width: 10%;
+    height: auto;
+  }
+
+  .hamburger-menu {
+    margin-right: 40px;
+    margin-top: 30px;
+    @include minq(md) {
+      display: none;
+    }
+
+    @include maxq(md) {
+      margin-top: 5px;
+    }
+
+    @include maxq(sm2) {
+      margin-top: 5px;
+      height: 1.5em;
+    }
+
+    @include maxq(sm) {
+      margin-top: 10px;
+      height: 1.5em;
+    }
+
+    svg {
+      @include maxq(sm) {
+        height: 1.3em;
+      }
+    }
+  }
+
+  .menu-nav {
+    display: flex;
+    align-items: center;
+
+    @include maxq(md) {
+      display: none;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .menu {
+        list-style: none;
+        flex: 1;
+        text-wrap: nowrap;
+        margin-left: 5px;
+        padding-right: 30px;
+
+        a {
+          position: relative;
+          text-decoration: none;
+          color: #000;
+        }
+
+        a::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 3px;
+          bottom: 0;
+          left: 0;
+          background-color: #4276ba;
+          visibility: hidden;
+          transition: all 0.3s ease-in-out;
+        }
+
+        a:hover::before {
+          visibility: visible;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.home {
+  .home-img {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; // 画像の縦横比を16:9に設定。必要に応じて変更してください。
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      text-align: center;
+
+      @include maxq(sm) {
+        margin-top: 30px;
+      }
+
+      p {
+        background-color: white;
+        padding: 10px;
+        font-size: 2rem;
+        text-align: center;
+        max-width: 100%;
+        text-wrap: nowrap;
+
+        @include maxq(md) {
+          font-size: 1.5rem; // フォントサイズを小さくする
+        }
+
+        @include maxq(sm2) {
+          font-size: 1.2rem;
+        }
+
+        @include maxq(sm) {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}
+
+.gallary {
+  width: 100%;
+  .gallary-title {
+    margin: 50px 0;
+    text-align: center;
+
+    @include maxq(md) {
+      font-size: 14px;
+    }
+
+    @include maxq(sm) {
+      font-size: 10px;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    @include minq(md) {
+      flex-direction: row;
+      align-items: start;
+      justify-content: space-around;
+    }
+
+    .container-item {
+      margin: 0 auto;
+      width: 100%;
+
+      @include minq(md) {
+        width: calc(30% - 20px);
+        margin: 10px;
+      }
+
+      .container-item-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img {
+          display: block;
+          height: 100%;
+          object-fit: cover;
+          max-width: 100%;
+
+          @include maxq(md) {
+            max-width: 80%;
+          }
+        }
+      }
+
+      .container-item-text {
+        width: 100%;
+        .title {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+          height: 100%;
+        }
+
+        .description {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          height: 100%;
+          margin-bottom: 50px;
+
+          @include maxq(sm2) {
+            font-size: 0.8rem;
+          }
+
+          @include maxq(sm) {
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+.company-section {
+  height: 500px;
+  background-color: rgb(245, 250, 252);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+
+  @include maxq(md) {
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .company-text,
+    .company-graph {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  .company-text {
+    width: 50%;
+    margin-right: 5%;
+    inline-size: 400px;
+
+    @include maxq(md) {
+      margin-top: 140px;
+      text-align: center;
+      width: 80%;
+    }
+
+    @include maxq(sm2) {
+      font-size: 0.8rem;
+    }
+
+    @include maxq(sm) {
+      font-size: 0.6rem;
+    }
+
+    h2 {
+      @include maxq(md) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .company-graph {
+    width: 45%;
+
+    @include maxq(md) {
+      margin-top: 50px;
+      margin-bottom: 100px;
+      width: 80%;
+    }
+
+    @include maxq(sm2) {
+      width: 90%;
+      font-size: 0.8rem;
+    }
+
+    @include maxq(sm) {
+      width: 90%;
+
+      font-size: 0.6rem;
+    }
+
+    h2 {
+      @include maxq(md) {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.inquiry-form {
+  height: 450px;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+
+    @include maxq(md) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .contact-text,
+      .form {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+
+    .contact-text {
+      width: 50%;
+      margin-right: 5%;
+      inline-size: 500px;
+
+      h2 {
+        color: #333;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #666;
+      }
+
+      @include maxq(md) {
+        text-align: center;
+        width: 80%;
+      }
+
+      @include maxq(sm2) {
+        font-size: 0.8rem;
+      }
+
+      @include maxq(sm) {
+        font-size: 0.6rem;
+      }
+    }
+
+    .form {
+      width: 45%;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include maxq(md) {
+        margin-top: 50px;
+        margin-bottom: 100px;
+        width: 80%;
+      }
+
+      @include maxq(sm2) {
+        width: 90%;
+        font-size: 0.8rem;
+      }
+
+      @include maxq(sm) {
+        width: 90%;
+        font-size: 0.6rem;
+      }
+
+      .form-field {
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          color: #333;
+          margin-bottom: 5px;
+        }
+
+        input {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+          padding: 10px;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          @include maxq(sm2) {
+            font-size: 0.8rem;
+          }
+
+          @include maxq(sm) {
+            font-size: 0.6rem;
+          }
+        }
+      }
+
+      input[type="submit"] {
+        background-color: #0079bf;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 5px;
+        font-weight: bold;
+        align-self: center;
+        width: 50%;
+        max-width: 200px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #005c92;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.site-footer {
+  background: #333;
+  color: white;
+  padding: 80px 0;
+
+  .copyright {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    text-align: center;
+
+    p {
+      margin-right: 20px;
+
+      @include maxq(sm2) {
+        font-size: 0.8rem;
+      }
+
+      @include maxq(sm) {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.slide-in-text {
+  animation: slide-in 1s ease-out forwards;
+}
+
+.slide-in-text-firsthalf {
+  animation: slide-in 1.5s ease-out forwards;
+  margin-top: 10px;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-60%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(-30%);
+    opacity: 1;
+  }
+}
