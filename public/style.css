@@ -382,8 +382,8 @@ body {
   }
 }
 .inquiry-form .container .form {
-  width: 45%;
-  padding: 20px;
+  width: 30%;
+  padding: 40px 30px 10px 30px;
   border: 1px solid #ddd;
   border-radius: 5px;
   margin-top: 40px;
@@ -412,6 +412,17 @@ body {
 }
 .inquiry-form .container .form .form-field {
   margin-bottom: 20px;
+  padding: 0 10px;
+}
+@media screen and (max-width: 560px) {
+  .inquiry-form .container .form .form-field {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .inquiry-form .container .form .form-field {
+    padding: 0;
+  }
 }
 .inquiry-form .container .form .form-field label {
   display: block;
@@ -443,12 +454,13 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   border: none;
-  padding: 10px 30px;
+  padding: 10px 0px;
   border-radius: 5px;
   font-weight: bold;
   align-self: center;
   width: 50%;
   max-width: 200px;
+  text-align: center;
 }
 .inquiry-form .container .form input[type=submit]:hover {
   background-color: #005c92;
