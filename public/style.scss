@@ -160,15 +160,15 @@ body {
         text-wrap: nowrap;
 
         @include maxq(md) {
-          font-size: 1.5rem;
+          font-size: 1.8rem;
         }
 
         @include maxq(sm2) {
-          font-size: 1.2rem;
+          font-size: 1.5rem;
         }
 
         @include maxq(sm) {
-          font-size: 0.7rem;
+          font-size: 1.2rem;
         }
       }
     }
