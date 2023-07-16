@@ -40,6 +40,7 @@ body {
   .hamburger-menu {
     margin-right: 40px;
     margin-top: 30px;
+    cursor: pointer;
     @include minq(md) {
       display: none;
     }
@@ -71,6 +72,10 @@ body {
 
     @include maxq(md) {
       display: none;
+    }
+
+    .nav-active {
+      transform: translateX(0);
     }
 
     .menu-item {
@@ -118,7 +123,7 @@ body {
     overflow: hidden;
     width: 100%;
     height: 0;
-    padding-top: 56.25%; // 画像の縦横比を16:9に設定。必要に応じて変更してください。
+    padding-top: 56.25%;
 
     img {
       position: absolute;
@@ -155,7 +160,7 @@ body {
         text-wrap: nowrap;
 
         @include maxq(md) {
-          font-size: 1.5rem; // フォントサイズを小さくする
+          font-size: 1.5rem;
         }
 
         @include maxq(sm2) {
@@ -241,7 +246,7 @@ body {
           }
 
           @include maxq(sm) {
-            font-size: 0.6rem;
+            font-size: 0.8rem;
           }
         }
       }
@@ -284,7 +289,7 @@ body {
     }
 
     @include maxq(sm) {
-      font-size: 0.6rem;
+      font-size: 0.8rem;
     }
 
     h2 {
@@ -310,8 +315,7 @@ body {
 
     @include maxq(sm) {
       width: 90%;
-
-      font-size: 0.6rem;
+      font-size: 0.8rem;
     }
 
     h2 {
@@ -374,7 +378,7 @@ body {
       }
 
       @include maxq(sm) {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
       }
     }
 
@@ -401,7 +405,7 @@ body {
 
       @include maxq(sm) {
         width: 90%;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
       }
 
       .form-field {
